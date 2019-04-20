@@ -1,0 +1,19 @@
+server:
+  port: 9001
+spring:
+  kafka:
+    bootstrap-servers: <kafka_server>:9092
+    consumer:
+      group-id: mytest-group
+      auto-offset-reset: earliest
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      topic: mytopic.t
+
+ #  properties:
+ #     ssl.endpoint.identification.algorithm: https
+ #     sasl.mechanism: PLAIN
+ #     request.timeout.ms: 20000
+ #     retry.backoff.ms: 500
+ #     sasl.jaas.config: org.apache.kafka.common.security.plain.PlainLoginModule required username="<user_name>" password="<password>";
+ #     security.protocol: SASL_SSL
